@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harta Zgjedhore</title>
+
+    <!-- Google Font: Source Code Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Apply Source Code Pro globally */
+      body {
+        font-family: "Source Code Pro", monospace;
+      }
+
+      .target-line {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: translateX(-1px);
+      }
+      .legend-color-light-border {
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-mono p-4 md:p-8">
+    <div class="header mb-6 pb-4 border-b border-gray-300">
+      <h1 class="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+        Zgjedhjet 2025
+      </h1>
+
+      <!-- New Header Results Layout -->
+      <div
+        class="results-header bg-white p-3 md:p-4 border border-gray-200 rounded shadow-sm flex flex-col gap-3"
+      >
+        <!-- Party Info Row -->
+        <div class="party-info-row flex justify-between items-end gap-4">
+          <!-- Left Side (PS) -->
+          <div class="party-left flex items-end gap-2 md:gap-3">
+            <img
+              src="logos/PS.png"
+              alt="PS"
+              class="w-8 h-8 md:w-10 md:h-10 object-contain mb-1"
+              onerror="this.onerror=null; this.src='logos/PS.svg'; this.onerror=function(){ this.style.display='none'; };"
+            />
+            <div>
+              <div class="party-name font-semibold text-sm text-gray-700">
+                Partia Socialiste
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span
+                  class="votes font-bold text-3xl md:text-4xl text-red-600"
+                  id="party1-votes"
+                  >0</span
+                >
+                <span
+                  class="percentage text-sm text-gray-500"
+                  id="party1-percentage"
+                  >0.0%</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Center (Placeholder if needed, or adjust spacing) -->
+
+          <!-- Right Side (ASHM) -->
+          <div class="party-right flex items-end gap-2 md:gap-3 text-right">
+            <div>
+              <div class="party-name font-semibold text-sm text-gray-700">
+                ASHM
+              </div>
+              <div class="flex items-baseline gap-2 justify-end">
+                <span
+                  class="percentage text-sm text-gray-500"
+                  id="party2-percentage"
+                  >0.0%</span
+                >
+                <span
+                  class="votes font-bold text-3xl md:text-4xl text-blue-600"
+                  id="party2-votes"
+                  >0</span
+                >
+              </div>
+            </div>
+            <img
+              src="logos/ASHM.svg"
+              alt="ASHM"
+              class="w-8 h-8 md:w-10 md:h-10 object-contain mb-1"
+              onerror="this.onerror=null; this.src='logos/ASHM.png'; this.onerror=function(){ this.style.display='none'; };"
+            />
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="relative pt-1">
+          <div class="center-bar flex h-6 overflow-hidden rounded bg-gray-200">
+            <!-- Bar segments will be dynamically added here -->
+          </div>
+          <!-- Target Line Container (Absolute Position) -->
+          <div class="absolute inset-0 pointer-events-none">
+            <!-- Vertical Line -->
+            <div
+              class="absolute top-0 bottom-0 border-l-2 border-dashed border-white-700"
+              style="left: 50.71%"
+            ></div>
+            <!-- Text Label Below Bar -->
+            <div
+              class="absolute text-sm text-gray-600 font-medium"
+              style="
+                top: 100%;
+                left: 50.71%;
+                transform: translateX(-50%);
+                margin-top: 2px;
+              "
+            >
+              71 PËR FITORE
+            </div>
+          </div>
+        </div>
+
+        <!-- Hover/Click Info Display -->
+        <div
+          id="bar-info-display"
+          class="flex justify-center items-center text-center text-sm text-gray-700 h-6 space-x-2 mt-1"
+        >
+          &nbsp;
+        </div>
+      </div>
+      <!-- End New Header Results Layout -->
+    </div>
+
+    <div
+      id="map"
+      class="h-[70vh] w-full border border-gray-300 rounded mb-6 bg-gray-100"
+    ></div>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- Map Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

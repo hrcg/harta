@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fut Rezultatet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Link to Source Code Pro if desired for consistency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Source Code Pro", monospace;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-4 md:p-8">
+    <div class="max-w-5xl mx-auto bg-white p-6 rounded shadow">
+      <h1 class="text-2xl font-bold text-center mb-6 text-gray-800">
+        HARTA ZGJEDHJET 2025 MANDATE
+      </h1>
+
+      <!-- Password Section -->
+      <div id="password-section" class="mb-6 p-4 border rounded bg-yellow-50">
+        <label for="password-input" class="block font-medium text-gray-700 mb-2"
+          >Ju lutem fusni fjalëkalimin për të hyrë:</label
+        >
+        <div class="flex gap-2">
+          <input
+            type="password"
+            id="password-input"
+            class="p-2 border border-gray-300 rounded w-full"
+          />
+          <button
+            id="password-submit"
+            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Hyr
+          </button>
+        </div>
+        <p id="password-error" class="text-red-600 text-sm mt-2"></p>
+      </div>
+
+      <!-- Form Content Section (Initially Hidden) -->
+      <div id="form-content" class="hidden">
+        <div
+          id="region-inputs"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
+        >
+          <!-- Input fields will be generated here by entry_script.js -->
+          <p class="text-gray-500 col-span-full text-center">
+            Duke ngarkuar të dhënat...
+          </p>
+        </div>
+
+        <div class="text-center pt-6 border-t border-gray-200">
+          <button
+            type="button"
+            id="save-results-button"
+            class="px-10 py-3 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+          >
+            Ruaj Rezultatet
+          </button>
+          <p
+            id="save-status"
+            class="mt-3 text-sm text-green-700 font-medium"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="entry_script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+{
+    "Berat": {
+        "seatsWon": {
+            "PS": 5,
+            "ASHM": 2
+        },
+        "totalSeats": 7,
+        "winner": "PS"
+    },
+    "Dibër": {
+        "seatsWon": {
+            "PS": 2,
+            "ASHM": 3
+        },
+        "totalSeats": 5,
+        "winner": "ASHM"
+    },
+    "Durrës": {
+        "seatsWon": {
+            "PS": 8,
+            "ASHM": 6
+        },
+        "totalSeats": 14,
+        "winner": "PS"
+    },
+    "Elbasan": {
+        "seatsWon": {
+            "PS": 8,
+            "ASHM": 6
+        },
+        "totalSeats": 14,
+        "winner": "PS"
+    },
+    "Fier": {
+        "seatsWon": {
+            "PS": 9,
+            "ASHM": 6
+        },
+        "totalSeats": 16,
+        "winner": "PS"
+    },
+    "Gjirokastër": {
+        "seatsWon": {
+            "PS": 3,
+            "ASHM": 1
+        },
+        "totalSeats": 4,
+        "winner": "PS"
+    },
+    "Korçë": {
+        "seatsWon": {
+            "PS": 4,
+            "ASHM": 6
+        },
+        "totalSeats": 10,
+        "winner": "ASHM"
+    },
+    "Kukës": {
+        "seatsWon": {
+            "PS": 1,
+            "ASHM": 2
+        },
+        "totalSeats": 3,
+        "winner": "ASHM"
+    },
+    "Lezhë": {
+        "seatsWon": {
+            "PS": 3,
+            "ASHM": 4
+        },
+        "totalSeats": 7,
+        "winner": "ASHM"
+    },
+    "Shkodër": {
+        "seatsWon": {
+            "PS": 3,
+            "ASHM": 6,
+            "KEA": 1,
+            "PSD": 1
+        },
+        "totalSeats": 11,
+        "winner": "ASHM"
+    },
+    "Tiranë": {
+        "seatsWon": {
+            "PS": 17,
+            "ASHM": 16,
+            "LB": 1,
+            "NSHB": 1,
+            "PM": 2
+        },
+        "totalSeats": 37,
+        "winner": "PS"
+    },
+    "Vlorë": {
+        "seatsWon": {
+            "PS": 6,
+            "ASHM": 5,
+            "PM": 1
+        },
+        "totalSeats": 12,
+        "winner": "PS"
+    }
+}
